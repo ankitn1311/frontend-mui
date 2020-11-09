@@ -2,7 +2,8 @@ import React from 'react';
 import { makeStyles } from "@material-ui/core/styles"
 import Menu from './Menu';
 import Header from './Header';
-import { CssBaseline } from '@material-ui/core';
+import { CssBaseline, Grid } from '@material-ui/core';
+import Content from './Content';
 
 const drawerWidth = 240;
 
@@ -24,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: drawerWidth
   },
-  // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
   tableMargin: {
     marginTop: "150px"
@@ -46,6 +46,7 @@ const App = () => {
       <Menu />
       <CssBaseline />
       <Header />
+      <Content />
     </div>
   )
 }

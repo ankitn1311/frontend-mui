@@ -1,21 +1,19 @@
 import React from 'react'
 import { Divider, Grid, Drawer, IconButton, Typography, makeStyles, List, ListItem } from '@material-ui/core'
 import SearchIcon from "@material-ui/icons/Search";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
 import ListItemText from "@material-ui/core/ListItemText";
-import MailIcon from "@material-ui/icons/Mail";
+import HomeIcon from '@material-ui/icons/Home';
+import PeopleIcon from '@material-ui/icons/People';
+import PaymentIcon from '@material-ui/icons/Payment';
 import PersonIcon from '@material-ui/icons/Person';
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import EcoIcon from '@material-ui/icons/Eco';
 import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
 import SettingsIcon from '@material-ui/icons/Settings';
 import SettingsApplicationsIcon from '@material-ui/icons/SettingsApplications';
 
-
-const menuElements = ["Home", "Customers", "Payments"];
 
 const drawerWidth = 240;
 
@@ -29,12 +27,6 @@ const useStyles = makeStyles((theme) => ({
     },
     nested: {
         paddingLeft: theme.spacing(4),
-    },
-    pR: {
-        paddingRight: "100px"
-    },
-    headerPadding: {
-        padding: "10px"
     }
   }))
 
@@ -60,7 +52,7 @@ const Menu = () => {
             >
             <Grid container direction="row">
                 <EcoIcon/>
-                <Typography variant="h6" className={classes.headerPadding}>UI Dashboard</Typography>
+                <Typography variant="h6">UI Dashboard</Typography>
             </Grid>
             <Divider />
             <Grid container direction="row" justify="space-evenly">
@@ -76,14 +68,24 @@ const Menu = () => {
             </Grid>
             <Divider />
             <List >
-            {menuElements.map((text, index) => (
-                <ListItem button key={text} className={classes.pR}>
+                <ListItem button className={classes.nested}>
                 <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                    <HomeIcon />
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemText primary="Home" />
                 </ListItem>
-            ))}
+                <ListItem button className={classes.nested}>
+                <ListItemIcon>
+                     <PeopleIcon />
+                </ListItemIcon>
+                <ListItemText primary="Customers" />
+                </ListItem>
+                <ListItem button className={classes.nested}>
+                <ListItemIcon>
+                     <PaymentIcon />
+                </ListItemIcon>
+                <ListItemText primary="Payments" />
+                </ListItem>
                 <ListItem button onClick={handleClick}>
                     <ListItemIcon>
                     <SettingsIcon />

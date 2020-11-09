@@ -13,7 +13,6 @@ import {
   Tab,
   Tabs
 } from "@material-ui/core";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
 import SearchIcon from "@material-ui/icons/Search";
 import SettingsApplicationsIcon from '@material-ui/icons/SettingsApplications';
 import PersonIcon from '@material-ui/icons/Person';
@@ -59,7 +58,7 @@ const Header = () => {
             <AppBar position="fixed" className={classes.appBar}>
                 <Container maxWidth="lg">
                 <Toolbar>
-                    <Grid container direction="column" justify="flex-start">
+                    <Grid container direction="column" justify="flex-start" >
                     <Grid container item direction="row" justify="space-between">
                         <Grid item>
                         <Typography variant="h6" wrap className={classes.alignS}>
