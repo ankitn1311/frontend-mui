@@ -20,26 +20,27 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
+import { Chip } from '@material-ui/core';
 
 function createData(name, calories, fat, carbs, protein) {
     return { name, calories, fat, carbs, protein };
 }
 
 const rows = [
-    createData(true, 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
-    createData(true, 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
-    createData(true, 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
-    createData(true, 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
-    createData(true, 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
-    createData(true, 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
-    createData(true, 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
-    createData(true, 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
-    createData(true, 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
-    createData(true, 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
-    createData(true, 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
-    createData(true, 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
-    createData(true, 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
-    createData(true, 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
+    createData('Pending', 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
+    createData('Pending', 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
+    createData('Pending', 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
+    createData('Pending', 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
+    createData('Pending', 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
+    createData('Pending', 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
+    createData('Pending', 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
+    createData('Pending', 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
+    createData('Pending', 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
+    createData('Pending', 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
+    createData('Pending', 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
+    createData('Pending', 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
+    createData('Pending', 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
+    createData('Pending', 'Amazon Limited Corp', 'Acme Company LLC', 9865, '2 Dec 2020'),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -212,6 +213,10 @@ const useStyles = makeStyles((theme) => ({
         top: 20,
         width: 1,
     },
+    chipColor: {
+        color: "#fff",
+        backgroundColor: "#2196F3"
+    }
 }));
 
 export default function TableComp() {
@@ -319,10 +324,15 @@ export default function TableComp() {
                                                 />
                                             </TableCell>
                                             <TableCell component="th" id={labelId} scope="row" padding="none">
-                                                {row.name}
+                                                <Chip
+                                                    size="small"
+                                                    label={row.name}
+                                                    clickable
+                                                    className={classes.chipColor}
+                                                />
                                             </TableCell>
-                                            <TableCell align="right">{row.calories}</TableCell>
-                                            <TableCell align="right">{row.fat}</TableCell>
+                                            <TableCell align="left">{row.calories}</TableCell>
+                                            <TableCell align="left">{row.fat}</TableCell>
                                             <TableCell align="right">{row.carbs}</TableCell>
                                             <TableCell align="right">{row.protein}</TableCell>
                                         </TableRow>

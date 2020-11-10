@@ -192,9 +192,9 @@ const App = () => {
           open={open}
         >
           <div className={classes.toolbarIcon}>
-            <EcoIcon style={{ fontSize: "50px" }} color="secondary" />
+            <EcoIcon style={{ fontSize: "50px", color: '#0B79D0' }} />
             <Typography variant="h6" style={{ fontWeight: '600' }}>
-              <span style={{ color: '#4CAF50' }}>UI </span>Dashboard
+              <span style={{ color: '#0B79D0' }}>UI </span>Dashboard
             </Typography>
           </div>
           <Divider />
