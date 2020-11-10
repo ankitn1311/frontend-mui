@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '8px 8px',
+    padding: '16px 8px 16px 0px',
     ...theme.mixins.toolbar,
   },
   appBar: {
