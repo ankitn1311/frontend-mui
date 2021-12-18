@@ -1,6 +1,6 @@
 # FrontEnd using React and Material UI
 
-## No functionality right now only UI
+## No functionality only UI
 
     Didn't changed table data to the requirment
 
